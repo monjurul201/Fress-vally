@@ -1,0 +1,10 @@
+.userProfile{
+    margin-top: 15px;
+}
+.userProfile img{
+    padding: 5px;
+    background-color: gray;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
