@@ -21,25 +21,27 @@ const CheekOut = () => {
                 setProduct(sellectedProduct)
             })
     }, [pdKey])
-    // console.log(product);
+    console.log(product);
 
-    const { Product, Price } = product;
+    const { Product, Price, photoURL } = product;
     const newProduct = {
         name: Product,
-        price: Price
+        price: Price,
+        image: photoURL
     }
-    // console.log(newProduct)
+    //console.log(newProduct)
 
     const handleCheek = () => {
-        const productInfo = { ...loggedInUser, ...newProduct }
-        //console.log(productInfo);
+
+        const productInfo = { ...loggedInUser, ...newProduct, date: new Date() }
+        console.log(productInfo);
 
         fetch('https://ancient-journey-25736.herokuapp.com/addOrder', {
-          method:'POST',
-          headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify(productInfo)
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(productInfo)
         })
             .then(res => res.json())
             .then(data => {
@@ -76,7 +78,7 @@ const CheekOut = () => {
                     </tbody>
                 </Table>
             </div>
-            <button onClick={handleCheek} style={{ marginLeft: 'auto' }} className='btn btn-success '><Link to='/order'>CheekOut</Link></button>
+            <Link to='/order'><button onClick={handleCheek} style={{ marginLeft: 'auto' }} className='btn btn-success '>CheekOut</button></Link>
         </div>
     );
 };

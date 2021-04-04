@@ -54,7 +54,7 @@ const Admin = () => {
 
     // Manage Product
     const [manageProduct, setManageProduct] = useState([])
-    const [deleteItem,setDeleteItem]=useState(false)
+    const [deleteItem, setDeleteItem] = useState(false)
     useEffect(() => {
         fetch('https://ancient-journey-25736.herokuapp.com/events')
             .then(res => res.json())
@@ -76,7 +76,7 @@ const Admin = () => {
                 }
             })
     }
-   
+
     return (
         <div className="container d-flex">
 
