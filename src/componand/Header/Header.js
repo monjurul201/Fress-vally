@@ -17,7 +17,8 @@ const Header = () => {
                         <Nav.Link className='mr-4' as={Link} to="/Admin">Admin</Nav.Link>
                         <Nav.Link className='mr-4' as={Link} to="/deals">Deals</Nav.Link>
                         {
-                            loggedInUser ? <p style={{color:'black'}} className='mt-2'>{loggedInUser.userName}</p> : <Nav.Link className='mr-4' as={Link} to="/login">Login</Nav.Link>
+                            loggedInUser.email ? (<p style={{color:'black'}} className='mt-2'>{loggedInUser.userName}</p> )
+                            :( <Nav.Link className='mr-4' as={Link} to="/login">Login</Nav.Link>)
                         }
 
                     </Nav>

@@ -34,7 +34,7 @@ const CheekOut = () => {
     const handleCheek = () => {
 
         const productInfo = { ...loggedInUser, ...newProduct, date: new Date() }
-        console.log(productInfo);
+        //console.log(productInfo);
 
         fetch('https://ancient-journey-25736.herokuapp.com/addOrder', {
             method: 'POST',
